@@ -16,6 +16,8 @@
   font-style: normal;
 }
 
+
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -46,6 +48,8 @@ img {
   --title-font: 'collingar', arial;
   --text-font: 'bitterpro', serif;
 }
+
+
 
 /***********/
 /* GENERAL */
@@ -165,6 +169,7 @@ img {
 video {
   background-color: var(--background);
 }
+
 
 
 /********/

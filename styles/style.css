@@ -42,7 +42,6 @@ img {
 /*********************/
 :root {
   --background: #E3DEDB;
-  --text: #2C2C2C;
   --accent: #27368F;
 
   --title-font: 'collingar', arial;
@@ -66,7 +65,7 @@ body {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: var(--title-font);
   text-align: center;
   margin-bottom: 0.3em;
@@ -122,8 +121,11 @@ a:focus::after{
 /* MAIN */
 body > div {
   min-height: 80vh;
-  margin: 0 30em 0 30em;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
 
 .sub main {
   display: flex;
@@ -133,12 +135,13 @@ body > div {
   background-image: url('../images/bg-01.png');
   background-size: contain;
   background-position: top;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
+  width: 60%;
 }
 
 main > p {
   margin-bottom: 2em;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 main > a::after {
@@ -158,8 +161,8 @@ main div p {
 
 img, video {
   height: 30em;
-  border: solid 0.1em var(--accent);
-  padding: 0.5em;
+  border: solid 0.05em var(--accent);
+  padding: 1.5%;
 }
 
 img {
@@ -182,7 +185,7 @@ video {
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
-  padding: 2em;
+  padding: 1.5%;
   width: 100vw;
 }
 
@@ -191,27 +194,27 @@ video {
   color: var(--accent);
   font-family: var(--title-font);
   background-image: url('../images/bg-01.png');
-  background-size: cover;
-  background-position: center;
+  background-size: 90%;
+  background-position: 50% 65%;
 }
 
 .home main ul {
-  font-size: 15rem;
+  font-size: clamp(11.5rem, 12vw, 15rem);
   list-style: none;
-  margin-top: 0.2em;
+  margin-top: 2%;
 }
 
 .home main ul li:nth-of-type(2), main ul li:nth-of-type(3) {
-  margin: -0.2em 0em 0em 0em;
+  margin: -2% 0 0 0;
 }
 
 .home main ul li:nth-of-type(2) {
   text-align: right;
-  margin-right: 0.4em;
+  transform: translateX(-4%);
 }
 
 .home main ul li:nth-of-type(3) {
-  margin-left: 0.8em;
+  transform: translateX(2%);
 }
 
 
@@ -221,7 +224,34 @@ video {
 /**********/
 footer {
   color: var(--accent);
-  padding: 1em 0em;
+  padding: 1em 0;
   margin-top: auto;
-  margin: auto 1em 0em 1em;
+  margin: auto 1em 0 1em;
+}
+
+
+
+/******************/
+/* RESPONSIVENESS */
+/******************/
+@media (min-width:104em) {
+  h1 {
+    font-size: 5rem;
+  }
+  
+  .home main {
+    background-position: center;
+  }
+  
+  .home main ul {
+    font-size: 15rem;
+  }
+
+  .sub main {
+    width: 50%;
+  }
+
+  img, video {
+    border: solid 0.1em var(--accent);
+  }
 }

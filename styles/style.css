@@ -1,0 +1,222 @@
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+  font-family: 'collingar';
+  src: url('../fonts/Collingar.woff2') format('woff2'),
+        url('../fonts/Collingar.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bitterpro';
+  src: url('../fonts/BitterPro-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box; 
+  margin:0;
+  padding:0;
+}
+
+button:not([disabled]) {
+  cursor:pointer;
+}
+
+img {
+  max-width:100%;
+}
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+  --background: #E3DEDB;
+  --text: #2C2C2C;
+  --accent: #27368F;
+
+  --title-font: 'collingar', arial;
+  --text-font: 'bitterpro', serif;
+}
+
+/***********/
+/* GENERAL */
+/***********/
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--background);
+  color: var(--accent);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--text-font);
+}
+
+h1 {
+  font-size: 5rem;
+  font-family: var(--title-font);
+  text-align: center;
+  margin-bottom: 0.3em;
+}
+
+a {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  color: var(--accent);
+  text-decoration: none;
+ }
+
+/* Hover animation underline*/
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.05em;
+  background-color: var(--accent);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  bottom: 0;
+  left: 0;
+}
+
+a::after {
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+}
+
+a:hover::after,
+a:focus::after{
+  transform: translate3d(0, 0, 0);
+}
+
+
+
+/*************/
+/* SUB PAGES */
+/*************/
+
+/* HEADER */
+.sub header {
+  margin: 2em 0 0 2em;
+}
+
+.sub header a {
+  display: inline-block;
+}
+
+/* MAIN */
+body > div {
+  min-height: 80vh;
+  margin: 0 30em 0 30em;
+}
+
+.sub main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url('../images/bg-01.png');
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat
+}
+
+main > p {
+  margin-bottom: 2em;
+  font-size: 0.9em;
+}
+
+main > a::after {
+  opacity: 0;
+}
+
+main div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+main div p {
+  flex: 1;
+}
+
+img, video {
+  height: 30em;
+  border: solid 0.1em var(--accent);
+  padding: 0.5em;
+}
+
+img {
+  margin-bottom: 2em;
+}
+
+video {
+  background-color: var(--background);
+}
+
+
+/********/
+/* HOME */
+/********/
+
+/* HEADER */
+.home header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 2em;
+  width: 100vw;
+}
+
+/* MAIN */
+.home main {
+  color: var(--accent);
+  font-family: var(--title-font);
+  background-image: url('../images/bg-01.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.home main ul {
+  font-size: 15rem;
+  list-style: none;
+  margin-top: 0.2em;
+}
+
+.home main ul li:nth-of-type(2), main ul li:nth-of-type(3) {
+  margin: -0.2em 0em 0em 0em;
+}
+
+.home main ul li:nth-of-type(2) {
+  text-align: right;
+  margin-right: 0.4em;
+}
+
+.home main ul li:nth-of-type(3) {
+  margin-left: 0.8em;
+}
+
+
+
+/**********/
+/* FOOTER */
+/**********/
+footer {
+  color: var(--accent);
+  padding: 1em 0em;
+  margin-top: auto;
+  margin: auto 1em 0em 1em;
+}
